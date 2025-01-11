@@ -4,10 +4,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { FlightLogsController } from './flight-log.controller';
 import { FlightLogsService } from './flight-log.service';
 import { FlightLog, FlightLogSchema } from './flight-log.schema';
+import { PDFService } from './pdf/pdf.service';
+import { PDFController } from './pdf/pdf.controller';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: FlightLog.name, schema: FlightLogSchema }])],
-  controllers: [FlightLogsController],
-  providers: [FlightLogsService],
+  controllers: [FlightLogsController, PDFController],
+  providers: [FlightLogsService, PDFService],
 })
 export class FlightLogsModule {}
