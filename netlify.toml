@@ -2,10 +2,6 @@
   command = "npm run build"
   publish = "dist/"
 
-[[functions]]
-  path = "/"
-  handler = "dist/main.js"
-
-[build.environment]
-  NODE_VERSION = "16" # or the version you're using
-
+[functions]
+  directory = "dist/"
+  included_files = ["dist/main.js"]
