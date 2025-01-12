@@ -3,5 +3,4 @@
   publish = "dist/"
 
 [functions]
-  directory = "dist/"
-  included_files = ["dist/main.js"]
+  directory = ""
