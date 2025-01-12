@@ -13,18 +13,21 @@ export class AuthService {
 
   async validateUser(email: string, password: string): Promise<any> {
     const user = await this.usersService.findByEmail(email);
-    if (user && (await this.comparePassword(password, user.password))) {
-      const { password, ...result } = user;
+    if (!user) return null;
+
+    if (await this.comparePassword(password, user.password)) {
+      const { password, ...result } = user.toObject(); // Convert Mongoose document to plain object
       return result;
     }
     return null;
   }
+
   private async comparePassword(plainPassword: string, hashedPassword: string): Promise<boolean> {
     return bcrypt.compare(plainPassword, hashedPassword);
   }
 
   async login(user: any) {
-    const payload = { email: user.email, sub: user._id };
+    const payload = { email: user.email, userId: user._id };
     return {
       access_token: this.jwtService.sign(payload),
     };

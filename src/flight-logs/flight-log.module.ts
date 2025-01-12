@@ -11,5 +11,6 @@ import { PDFController } from './pdf/pdf.controller';
   imports: [MongooseModule.forFeature([{ name: FlightLog.name, schema: FlightLogSchema }])],
   controllers: [FlightLogsController, PDFController],
   providers: [FlightLogsService, PDFService],
+  exports:[FlightLogsService]
 })
 export class FlightLogsModule {}

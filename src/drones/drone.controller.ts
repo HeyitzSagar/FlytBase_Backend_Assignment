@@ -11,7 +11,7 @@ export class DronesController {
     return this.dronesService.create(droneDto);
   }
 
-  @Get()
+  @Get('getall')
   async findAll() {
     return this.dronesService.findAll();
   }

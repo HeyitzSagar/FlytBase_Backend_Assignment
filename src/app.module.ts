@@ -7,6 +7,7 @@ import { UsersModule } from './users/user.module';
 import { DronesModule } from './drones/drone.module';
 import { MissionsModule } from './missions/mission.module';
 import { FlightLogsModule } from './flight-logs/flight-log.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { FlightLogsModule } from './flight-logs/flight-log.module';
       }),
       inject: [ConfigService],
     }),
+    AuthModule,
     UsersModule,
     DronesModule,
     MissionsModule,

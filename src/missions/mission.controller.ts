@@ -20,7 +20,7 @@ export class MissionsController {
   }
 
   // Fetch all missions
-  @Get()
+  @Get('all')
   async getMissions() {
     return this.missionsService.getMissions();
   }

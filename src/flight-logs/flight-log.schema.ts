@@ -25,7 +25,7 @@ export class FlightLog extends Document {
   @Prop({ required: true })
   executionStart: Date; // Start time of the mission execution
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   executionEnd: Date; // End time of the mission execution
 
   @Prop({ default: Date.now })
