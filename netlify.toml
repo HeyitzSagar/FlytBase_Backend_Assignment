@@ -5,3 +5,7 @@
 [[functions]]
   path = "/"
   handler = "dist/main.js"
+
+[build.environment]
+  NODE_VERSION = "16" # or the version you're using
+
